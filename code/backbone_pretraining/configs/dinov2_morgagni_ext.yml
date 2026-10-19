@@ -1,0 +1,22 @@
+# Pretrain DINOv2 ViT-S/14 on Morgagni + Tecnai EM images (other disease classes only).
+# Ablation: extended pretraining dataset.
+# Set `data` to your extended EM images directory.
+
+data: /path/to/em/images_extended   # set to your extended dataset directory
+out: ./checkpoints/dinov2_morgagni_ext
+overwrite: True
+
+loggers:
+  wandb:
+    project: "glomerular-em-dino-pretrain"
+    name: "dinov2_morgagni_ext"
+
+model: "dinov2/vits14"
+method: "dinov2"
+
+epochs: 500
+callbacks:
+  model_checkpoint:
+    save_last: true
+    save_top_k: -1
+    every_n_epochs: 50
