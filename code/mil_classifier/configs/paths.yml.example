@@ -1,0 +1,23 @@
+# Copy this file to paths.yml and fill in your local paths.
+# paths.yml is git-ignored and never committed.
+#
+# Usage: always pass this first, before the experiment config:
+#   python main.py --config configs/paths.yml --config configs/main_model_fold0.yml
+
+# Path to the images index JSON (see data/images_index_example.json for format)
+PROCESSED_JSON_PATH: /path/to/data/images_index.json
+
+# Path to the cross-validation folds JSON (see data/folds_example.json for format)
+FOLDS_PATH: /path/to/data/folds.json
+
+# Path to the IF marker CSV (see data/if_markers_example.csv for format)
+# Only required when TAB_FUSION: true (all configs except ablation_no_if)
+TAB_FEATURES_CSV: /path/to/data/if_markers.csv
+
+# Path to the pretrained DINOv2 ViT-S/14 checkpoint (.pt file)
+# Produced by backbone_pretraining/pretrain_dino_lightly.py
+# Not required for ablation_facebook_weights or ablation_random_init configs
+VIT_CHECKPOINT: /path/to/checkpoints/dinov2_morgagni/epoch_500.pt
+
+# WandB project name (optional — overrides the value in each experiment config)
+# PROJECT_NAME: glomerular_em_mil

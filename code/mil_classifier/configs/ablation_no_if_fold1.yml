@@ -1,0 +1,39 @@
+# configs/dino_finetuned.yml
+# Experiment D — ViT-Small (DINO pretrained), fine-tuned end-to-end
+
+PROJECT_NAME: glomerular_em_mil
+RUN_NAME: ablation_no_if_fold1
+
+CLASSES:
+  - "IgA nephropathy"
+  - "Alport syndrome/thin membrane disease"
+  - "Membranous nephropathy"
+  - "Diabetic kidney disease"
+  - "Minimal change disease (MCD)"
+  - "Lupus nephritis"
+
+TAB_FUSION: false
+TAB_MARKER_COLS:
+  - IgAbin_corrected
+  - IgGbin_corrected
+  - IgMbin_corrected
+  - C1qbin_corrected
+  - C3cbin_corrected
+  - Kbin_corrected
+  - lambdabin_corrected
+  - Fbbin_corrected
+TAB_PROJ_DIM: 64
+TAB_FULL_DROPOUT_PROB: 0.2
+TAB_DROPOUT: 0.1
+
+BACKBONE: dinov2_vits14
+FREEZE_BACKBONE: false
+TRAINING_MODE: patient
+MIL_MODE: max
+MAX_IMGS_PER_PATIENT: 100
+BAG_DROPOUT: 0.2
+EPOCHS: 50
+CHECKPOINT_METRIC: f1_macro
+LR: 5e-4
+AUG_MODE: v2
+FOLD: 1
