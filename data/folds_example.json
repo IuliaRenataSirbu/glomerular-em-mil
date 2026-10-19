@@ -1,0 +1,42 @@
+{
+  "config": {
+    "k": 5,
+    "seed": 42,
+    "classes": [
+      "IgA nephropathy",
+      "Alport syndrome/thin membrane disease",
+      "Membranous nephropathy",
+      "Diabetic kidney disease",
+      "Minimal change disease (MCD)",
+      "Lupus nephritis"
+    ],
+    "n_patients": 1095,
+    "n_test_patients": 266,
+    "n_trainval_patients": 829
+  },
+  "test": [
+    "patient003",
+    "patient004"
+  ],
+  "folds": {
+    "0": {
+      "train": ["patient005", "patient006", "patient007"],
+      "val":   ["patient008", "patient009"]
+    },
+    "1": {
+      "train": ["patient008", "patient009", "patient007"],
+      "val":   ["patient005", "patient006"]
+    }
+  },
+  "patient_labels": {
+    "patient001": "IgA nephropathy",
+    "patient002": "Membranous nephropathy",
+    "patient003": "Diabetic kidney disease",
+    "patient004": "Lupus nephritis",
+    "patient005": "IgA nephropathy",
+    "patient006": "Minimal change disease (MCD)",
+    "patient007": "Alport syndrome/thin membrane disease",
+    "patient008": "Membranous nephropathy",
+    "patient009": "IgA nephropathy"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "patient001-1-10",
+    "folder_above": "patient001",
+    "name_and_folder": "patient001/patient001-1-10",
+    "diagnosis": "IgA nephropathy",
+    "fullpath": "/path/to/em/images/patient001/patient001-1-10.tif",
+    "patient_id": "patient001",
+    "shapex": 1376,
+    "shapey": 1032,
+    "morechannels": false,
+    "longscalebar": false,
+    "shortscalebar": false,
+    "sizeMB": 1.42,
+    "magnification": 2200.0,
+    "cameraname": "MegaView III Search",
+    "pixelsizex": 3.13e-08,
+    "pixelsizey": 3.13e-08
+  },
+  {
+    "name": "patient002-2-05",
+    "folder_above": "patient002",
+    "name_and_folder": "patient002/patient002-2-05",
+    "diagnosis": "Membranous nephropathy",
+    "fullpath": "/path/to/em/images/patient002/patient002-2-05.tif",
+    "patient_id": "patient002",
+    "shapex": 2048,
+    "shapey": 1536,
+    "morechannels": false,
+    "longscalebar": false,
+    "shortscalebar": false,
+    "sizeMB": 3.15,
+    "magnification": 3500.0,
+    "cameraname": "Microscope Tecnai 120 kV D1117 BioTwin",
+    "pixelsizex": 2.0e-08,
+    "pixelsizey": 2.0e-08
+  }
+]

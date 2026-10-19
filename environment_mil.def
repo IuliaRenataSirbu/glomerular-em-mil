@@ -1,0 +1,26 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    pip install --no-cache-dir \
+        "numpy==1.26.4" \
+        pandas \
+        scikit-learn \
+        matplotlib \
+        seaborn \
+        scipy \
+        pillow \
+        tqdm \
+        pyyaml \
+        wandb \
+        timm \
+        lightly-train
+
+    echo "--- ENVIRONMENT CHECK ---"
+    python -c "import torch; import lightly_train; import timm; import wandb; print('All systems go!')"
+
+%environment
+    export LC_ALL=C.UTF-8
+    export PYTHONUNBUFFERED=1

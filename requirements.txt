@@ -1,0 +1,25 @@
+# Core
+torch>=2.1.0
+torchvision
+pytorch-lightning>=2.4.0
+
+# Backbone pretraining (DINOv2 via lightly)
+lightly-train[wandb]>=0.14.0
+timm
+einops
+fvcore
+iopath
+
+# Data & config
+numpy
+pandas
+scipy
+Pillow
+pyyaml
+tqdm
+
+# Logging & analysis
+wandb
+matplotlib
+seaborn
+scikit-learn

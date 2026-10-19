@@ -1,0 +1,39 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0
+
+    pip install --upgrade pip
+
+    pip install --no-cache-dir "lightly-train[wandb]>=0.14.0"
+
+    pip install --no-cache-dir \
+        "pytorch-lightning>=2.4.0" \
+        timm \
+        einops \
+        fvcore \
+        iopath \
+        numpy \
+        pillow \
+        scipy \
+        pyyaml \
+        pandas \
+        tqdm \
+        matplotlib \
+        seaborn \
+        wandb \
+        scikit-learn
+
+    echo "--- ENVIRONMENT CHECK ---"
+    python -c 'import torch; import lightly_train; print(f"Torch: {torch.__version__} | CUDA: {torch.cuda.is_available()}")'
+
+%environment
+    export PYTHONUNBUFFERED=1
+    export NCCL_DEBUG=INFO
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+%runscript
+    exec python "$@"

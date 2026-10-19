@@ -1,0 +1,6 @@
+ID,IgAbin_corrected,IgGbin_corrected,IgMbin_corrected,C1qbin_corrected,C3cbin_corrected,Kbin_corrected,lambdabin_corrected,Fbbin_corrected
+patient001,1,0,0,0,1,1,1,0
+patient002,0,1,0,0,0,1,1,0
+patient003,0,0,0,0,0,0,0,0
+patient004,0,1,1,1,1,1,1,0
+patient005,1,0,0,0,1,0,0,0
